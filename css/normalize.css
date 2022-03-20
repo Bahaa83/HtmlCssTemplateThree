@@ -1,7 +1,6 @@
 /*--Start Globel rules --*/
 body{
-    font-family: 'Open Sans', sans-serif;
-font-family: 'Work Sans', sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 *{
 -webkit-box-sizing: border-box;
@@ -11,4 +10,44 @@ box-sizing: border-box;
 .html{
     scroll-behavior: smooth;
 }
+/*--variables--*/
+:root{
+    --main-color:#ECECEC;
+    --second-color:#FFFFFF;
+    --therd-color:#2196F3;
+}
+.container{
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: var(--second-color);
+    width: 100%; /*-- mobile screen ;) --*/
+}
+ul{
+    list-style: none;
+}
+.upper-case{
+text-transform: uppercase;
+}
+
+/*-- Media query --*/
+/*--Small screen--*/
+@media (min-width:768px) {
+    .container{
+        width: 750px;
+    }
+}
+
+/*--Medium screen--*/
+@media (min-width:992) {
+    .container{
+        width:970px
+    }
+}
+/*--Large scren--*/
+@media (min-width:1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+
 /*--End Globel rulles --*/
