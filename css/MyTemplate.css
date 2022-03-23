@@ -61,81 +61,166 @@ text-transform: uppercase;
 
 /*--Start Header--*/
 .header{
-    height: 78px;
-    box-shadow: 0px 2px 5px #ddd;
+position: relative;
+box-shadow: 0px 1px 5px var(--main-color);
+background-color: white;
+z-index: 100;
 }
-@media (max-width:750px) {
-    .header{
-        height: 97px;
-    }  
-}
-
-.headre .container {
-   
-}
-.container > nav{
+.header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     flex-wrap: wrap;
 }
-@media (max-width:750px) {
-    .container > nav{
-       flex-direction: column;
-    } 
+.header .container .logo{
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-nav .logo{
-color: var(--therd-color);
-text-transform: uppercase;
+@media (max-width:768px) {
+    .header .container .logo{
+      width: 100%;
+    }
 }
-nav .logo h3{
-    letter-spacing: -1px;
+.header .container .logo h3{
+    color: var(--therd-color);
+    letter-spacing: 1px;
+    
+    
 }
-nav ul {
+
+.header .container .main-nav{
     display: flex;
 }
-nav ul li{
-    padding: 30px 0px;
+@media (max-width:768px) {
+    .header .container .main-nav{
+        margin: 0 auto;
+    }
+}
+.main-nav > li > a{
+    height: 72px;
     position: relative;
+    padding: 0 30px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     transition: var(--transition--);
 }
-@media (max-width:750px) {
-    nav ul li{
-        padding: 10px 0px;
+@media (max-width:768px) {
+    .main-nav > li > a{
+        padding: 0 10px;
+        height: 50px;
     }
 }
-
-nav ul li a{
-    color: black;
-    padding: 0px 30px;
-    transition: var(--transition--);
-}
-@media (max-width:750px) {
-    nav ul li a{
-        padding: 0px 10px;
-    }
-}
-nav ul li:hover{
-    background-color: var(--main-color);
-}
-nav ul li:hover a{
-    color: var(--therd-color);
-}
-nav ul li:hover a::before{
-    left:0; 
-}
-nav ul li a::before{
+.main-nav > li > a::before{
     content: "";
     position: absolute;
     background-color: var(--therd-color);
-    width: 100%;
-    height: 3px;
     top: 0;
     left: -100%;
+    height: 3px;
+    width: 100%;
     transition: var(--transition--);
 }
+.main-nav > li > a:hover::before{
+    left: 0;
+}
+.main-nav > li > a:hover{
+    color:var(--therd-color);
+    background-color: var(--main-color);
+}
+
+/*--End Header--*/
 /*--Start Landing--*/
+.landing{
+
+}
+.landing::before{
+    content: "";
+    background-color:var(--main-color);
+    width: 100%;
+    height: 100%;
+    top: -25px;
+    left: 0;
+    position: absolute;
+    transform: skewY(-5deg);
+    transform-origin: left top;
+    z-index: 0;
+}
+.landing .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 72px);
+}
+.text{
+    position: relative;
+    width: 500px;
+}
+
+.text h1{
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 40px;
+}
+.text p{
+    line-height: 2;
+    font-weight: 400;
+    color: #777;
+    margin: 5px 10px 0 0;
+}
+.container .image{
+   
+}
+.container .image img{
+width: 600px;
+position: relative;
+animation-name: up-down;
+animation-duration: 3s;
+animation-direction: alternate;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+max-width: 100%;
+}
+
+.landing .go-down{
+    color: var(--therd-color);
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-100%);
+}
+.landing .go-down i {
+    position: relative;
+    animation-name: go-down;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
 
 /*--End Landing--*/
-/*--End Header--*/
+/*--Start Animation*/
+@keyframes up-down {
+    0%{
+        top:0
+    }
+   
+    100%{
+        top:-50px
+    }
+}
+@keyframes go-down {
+    0%,30%,50%,70%,100%{
+        top:0;
+    }
+    40%,90%{
+        top:-30px
+    }
+}
+/*--End Animation--*/
