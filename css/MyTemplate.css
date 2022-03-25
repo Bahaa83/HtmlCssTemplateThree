@@ -16,6 +16,8 @@ body{
     --second-color:#FFFFFF;
     --therd-color:#2196F3;
     --transition--:0.3s;
+    --main-padding-top-bottom--:100px 0;
+    --main-margin--:100px;
 }
 .container{
     margin: 0 auto;
@@ -184,11 +186,92 @@ text-transform: uppercase;
     color:var(--therd-color);
     background-color: var(--main-color);
 }
+.main-nav > li:hover .mega-menu{
+display: flex;
+top: calc(100% + 1px);
+}
+/*--Start Mega menu--*/
+.mega-menu{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: var(--second-color);
+    top: calc(100% + 50px);
+    padding: 20px;
+    gap: 30px;
+    border-bottom: 5px solid var(--therd-color);
+    display: none;
+}
+@media (max-width:700px) {
+    .mega-menu{
+        flex-direction: column;
+        gap: 0;
+        padding: 0 20px;
+    }
+    .mega-menu ul:first-of-type li:last-child{
+        border-bottom: 1px solid var(--main-color);
+    }
+}
+@media (max-width:1200px) {
+    .mega-menu img{
+    display: none;
+    }
+}
+.mega-menu ul{
+    flex: 1;
+    padding: 15px 0 15px 25px;
+}
+@media (max-width:700px) {
+    .mega-menu ul{
+        padding: 0 0 0 25px;
+    }
+}
+.mega-menu ul li{
+    position: relative;
+}
+.mega-menu ul li:not(:last-child){
+    border-bottom: 1px solid var(--main-color);
+}
+.mega-menu ul li a{
+    color: var(--therd-color);
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.4s;
+}
+.mega-menu ul li a:hover::before{
+    animation-name: move-left-mega;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+.mega-menu ul li a::before{
+    content: "";
+    position: absolute;
+    background-color: #fafafa;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    z-index: -1
+}
+
+.mega-menu ul li a i{
+    color: var(--therd-color);
+    margin-right: 5px;
+}
+/*--Start Mega menu--*/
 
 /*--End Header--*/
 /*--Start Landing--*/
 .landing{
-
+position: relative;
 }
 .landing::before{
     content: "";
@@ -266,8 +349,71 @@ max-width: 100%;
 
 /*--End Landing--*/
 /*--Start Articles--*/
+.articles{
+    padding: var(--main-padding-top-bottom--);
+}
+.articles .container{
+    margin-top: var(--main-margin--);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+ 
+  
 
+}
+.articles .container > .box{
+    border: 1px solid var(--main-color);
+    border-radius: 3%;
+    overflow: hidden;
+    box-shadow: 0 5px 5px var(--main-color);
+    position: relative;
+}
+.articles .container .box:hover{
+animation-name: go-up;
+animation-duration: 0.3s;
+animation-iteration-count:1;
+animation-timing-function: linear;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+}
 
+.articles .container > .box > img{
+    width: 100%;
+    max-width: 100%;
+}
+.articles .container > .box > .text{
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid var(--main-color);
+    padding: 15px;
+}
+.articles .container > .box > .text > h3{
+    margin: 0;
+}
+.articles .container > .box > .text > p{
+    margin: 5px 0 0;
+    line-height: 1.6;
+    color: #777;
+}
+.articles .container > .box > .foter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: var(--therd-color);
+}
+.articles .container > .box > .foter > h3{
+
+}
+.articles .container > .box > .foter > a > i{
+position: relative;
+animation-name: go-right;
+animation-duration: 0.3s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-direction: alternate;
+color: var(--therd-color);
+}
 
 /*--End Articles--*/
 /*--Start Animation*/
@@ -314,6 +460,33 @@ max-width: 100%;
         border-radius: 0;
         right: 0;
         
+    }
+}
+@keyframes go-right {
+    50%{
+        left:3px
+    }
+    100%{
+        left:5px
+    }
+
+}
+@keyframes go-up {
+    50%{
+        bottom:5px;
+    }
+    100%{
+        bottom:10px
+    }
+
+}
+@keyframes move-left-mega {
+   
+    50%{
+        left: 0;
+    }
+    100%{
+        left: 0;
     }
 }
 /*--End Animation--*/
