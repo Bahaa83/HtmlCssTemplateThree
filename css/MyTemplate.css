@@ -649,6 +649,7 @@ transform: rotate(5deg) scale(1.2,1.2);
 .testimonials{
     background-color: var(--main-color);
     padding: var(--main-padding-top-bottom--);
+    
 }
 
 .testimonials .container{
@@ -696,6 +697,87 @@ transform: rotate(5deg) scale(1.2,1.2);
     
 }
 /*--End Testimonials--*/
+
+/*--Start Team Members--*/
+.teammembers{
+    background-color: var(--second-color);
+    padding: var(--main-padding-top-bottom--);
+}
+
+.teammembers .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 35px;
+}
+
+.teammembers .container .box{
+    position: relative;
+}
+.teammembers .container .box::before{
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 100%;
+    top: 0;
+    background-color: #77777724;
+    border-radius: 10px;
+    right: 0;
+}
+.teammembers .container .box::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:0;
+    height: 100%;
+    background-color: #77777759;
+    border-radius: 10px;
+    transition: var(--transition--);
+}
+
+.teammembers .container .box:hover::after{
+animation: fill-team 0.3s linear  1  forwards;
+}
+.teammembers .container .box:hover img{
+    filter: grayscale(100%);
+}
+
+.teammembers .container .box .data{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 50px;
+    z-index: 10;
+}
+
+.teammembers .container .box .data img{
+    max-width: calc(100% - 60px);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.teammembers .container .data .media{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teammembers .container .data .media i{
+    padding: 10px 0;
+    color: #777;
+}
+.teammembers .container .box .info{
+    padding-left: 50px;
+}
+.teammembers .container .box .info h2{
+    color: var(--therd-color);
+    margin-bottom: 0;
+}
+.teammembers .container .box .info p{
+    
+}
+/*--End Team Members--*/
 
 /*--Start Animation*/
 @keyframes up-down {
@@ -794,6 +876,11 @@ transform: rotate(5deg) scale(1.2,1.2);
     
     100%{
        width: 100%;
+    }
+}
+@keyframes fill-team {
+    100%{
+        width: calc(100% - 30px);
     }
 }
 
