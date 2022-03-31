@@ -906,8 +906,87 @@ transform: translateY(-10px);}
     padding: 2px;
     
 }
-
 /*--End OurSkills--*/
+
+/*--Start Work steps--*/
+.work-steps{
+    background-color: var(--main-color);
+    padding: var(--main-padding-top-bottom--);
+}
+
+.work-steps .container{
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+   flex-wrap: wrap;
+}
+@media (max-width:990px) {
+    .work-steps .container{
+        flex-direction: column;
+    }
+    
+}
+
+.work-steps .container img{
+    max-width: 100%;
+    margin-right: 100px;
+}
+@media (max-width:990px) {
+    .work-steps .container img{
+        margin-right: 0;
+    }
+}
+
+.work-steps .container .boxes{
+    flex: 1;
+}
+
+.work-steps .container .boxes .box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f6f5f5;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 25px 0;
+}
+.work-steps .container .boxes .box::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #77777717;
+    left: 50%;
+    top: 50%;
+    /* transform: translate(-50%,-50%); */
+    transform: translate(-50%, -50%);
+    transition: var(--transition--);
+}
+
+.work-steps .container .boxes .box:hover::before{
+    animation: fill-mode-center  0.3s linear  1 alternate forwards;
+}
+
+.work-steps .container .boxes .box img{
+    width: 65px;
+    margin-right: 25px;
+}
+
+.work-steps .container .boxes .box .info h2{
+    margin-top: 0;
+}
+
+.work-steps .container .boxes .box .info p{
+    font-size: 20px;
+    line-height: 1.5;
+    color: #777;
+}
+
+
+
+/*--End work steps--*/
+
 /*--Start Animation*/
 @keyframes up-down {
     0%{
@@ -965,11 +1044,8 @@ transform: translateY(-10px);}
 
 }
 @keyframes go-up {
-    50%{
-        bottom:5px;
-    }
     100%{
-        bottom:10px
+        transform: translateY(-10px);
     }
 
 }
@@ -1010,6 +1086,28 @@ transform: translateY(-10px);}
 @keyframes fill-team {
     100%{
         width: calc(100% - 30px);
+    }
+}
+@keyframes fill-mode-center {
+    0%,30%{
+        width: 25%;
+        height: 25%;
+    }
+    40%{
+        width: 40%;
+        height: 40%;
+    }
+    50%{
+        width: 50%;
+        height: 50%;
+    }
+    60%,75%{
+        width: 75%;
+        height: 75%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
     }
 }
 
