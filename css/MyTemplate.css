@@ -850,7 +850,64 @@ transform: translateY(-10px);}
 }
 /*--End Services--*/
 
+/*--Start Our Skills--*/
+.ourskills{
+    background-color: var(--second-color);
+    padding: var(--main-padding-top-bottom--);
+}
 
+.ourskills .container{
+    background-color: var(--second-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+@media (max-width:990px) {
+    .ourskills .container img{
+        display: none;
+    }
+}
+.ourskills .container .progressive{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.ourskills .container .progressive h3{
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.ourskills .container .progressive .progress{
+    position: relative;
+    width: 100%;
+    background-color: var(--main-color);
+    height: 32px;
+    
+}
+.ourskills .container .progressive .prog{
+    background-color: var(--therd-color);
+    height: 100%;
+}
+
+.ourskills .container .progressive .progress::before{
+    content: attr(data-prog);
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: -40px;
+    right: 0;
+    color: var(--therd-color);
+    font-size: 17px;
+    font-weight: 900;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2px;
+    
+}
+
+/*--End OurSkills--*/
 /*--Start Animation*/
 @keyframes up-down {
     0%{
