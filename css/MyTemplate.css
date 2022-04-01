@@ -982,10 +982,140 @@ transform: translateY(-10px);}
     line-height: 1.5;
     color: #777;
 }
-
-
-
 /*--End work steps--*/
+
+/*--Start Events--*/
+.events{
+position: relative;
+background-color: var(--second-color);
+padding: var(--main-padding-top-bottom--);
+}
+
+.events .dots-1{
+    position: absolute;
+    right: 0;
+    top: 200px;
+    z-index: 3;
+}
+
+.events .dots-2{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+}
+@media (max-width:1200px) {
+    .events .dots-2,
+    .events .dots-1{
+     display: none;
+    }
+}
+
+.events .container{
+    background-color: var(--second-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+@media (max-width:900px) {
+    .events .container{
+        flex-direction: column;
+    }
+}
+
+.events .container img{
+    width: 450px;
+}
+@media (max-width:900px) {
+    .events .container img{
+        width: 100%;
+    }
+}
+
+.events .container .data{
+    text-align: center;
+}
+.events .container .data .calander{
+    display: flex;
+    justify-content: center;
+}
+.events .container .data .calander .card{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+.events .container .data .calander .card span:first-of-type{
+    display: block;
+    padding: 12px 10px;
+    color: var(--therd-color);
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.events .container .data .calander .card span:last-child{
+    padding: 8px 10px;
+    font-size: 15px;
+    border-top: 1px solid #ccc;
+    display: block;
+}
+
+.events .container .data .info p{
+    line-height: 1.8;
+    color: #777;
+}
+
+.events .subscribe{
+    width: 500px;
+    background-color: var(--main-color);
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 35px;
+}
+@media (max-width:550px) {
+    .events .subscribe{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 0;
+        margin: 10px auto;
+        max-width: calc(100% - 40px);
+    }
+}
+
+.events .subscribe input{
+    width: 70%;
+    padding: 15px;
+    border-radius: 25px;
+    border-color: transparent;
+}
+@media (max-width:550px) {
+    .events .subscribe input{
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+.events .subscribe span{
+    margin-left: 10px;
+    padding: 12px;
+    color: white;
+    background-color: var(--therd-color);
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 900;
+}
+@media (max-width:550px) {
+    .events .subscribe span{
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        text-align: center;
+    }
+}
+/*--End Event--*/
 
 /*--Start Animation*/
 @keyframes up-down {
