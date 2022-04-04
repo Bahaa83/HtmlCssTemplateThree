@@ -114,6 +114,7 @@ text-transform: uppercase;
 }
 .spikes{
     position: relative;
+    z-index: 100;
 }
 .spikes::after{
     content: "";
@@ -1116,6 +1117,144 @@ padding: var(--main-padding-top-bottom--);
     }
 }
 /*--End Event--*/
+
+/*--Start Pricing--*/
+.pricing{
+    background-color: var(--main-color);
+    padding: var(--main-padding-top-bottom--);
+}
+.pricing .container {
+background-color:var(--main-color);
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+gap: 30px;
+}
+
+.pricing .container .box{
+position: relative;
+background-color: var(--second-color);
+z-index: 5;
+border: 1px solid #eee;
+box-shadow:0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+text-align: center;
+}
+
+.pricing .container .box:hover::before,
+.pricing .container .box:hover::after
+{
+    width: 100%;
+}
+.pricing .container .box::before,
+.pricing .container .box::after{
+content: "";
+position: absolute;
+background-color: #eeeeee87;
+height: 50%;
+width: 0;
+z-index: -1;
+transition: var(--transition--);
+}
+
+.pricing .container .box::before{
+    right: 0;
+    top: 0;
+}
+.pricing .container .box::after{
+    left: 0;
+    bottom: 0;
+}
+
+.pricing .container .box .title{
+
+}
+
+.pricing .container .box img{
+    width: 85px;
+    margin: 20px 0
+}
+
+.pricing .container .box .price{
+
+}
+
+.pricing .container .box .price span:first-child{
+    display: block;
+    color: var(--therd-color);
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.pricing .container .box .price span:last-child{
+color: #777;
+}
+
+.pricing .container .box ul{
+    text-align: left;
+    margin: 20px 15px;
+}
+
+.pricing .container .box ul li{
+    padding: 20px;
+    border-top: 1px solid #eee;
+    font-weight: 600;
+}
+
+.pricing .container .box ul li i{
+    color: var(--therd-color);
+    padding-right: 10px;
+}
+
+.pricing .container .box.popular .label {
+    position: absolute;
+    writing-mode: vertical-lr;
+    background-color: var(--therd-color);
+    color: var(--second-color);
+    font-weight: bold;
+    padding: 5px 5px 25px;
+    right: 15px;
+    top: 0;
+}
+@media (min-width:1200px) {
+    .pricing .container .box.popular{
+        top:-15px
+    }
+}
+.pricing .container .box.popular .label::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: transparent  transparent white  transparent;
+    border-width: 15px;
+    bottom: -1px;
+    left: 0;
+}
+.pricing .container .box a{
+    color: var(--therd-color);
+    font-weight: 900;
+    background-color: var(--second-color);
+    border: 1px solid var(--therd-color);
+    padding: 12px;
+    width: fit-content;
+    border-radius: 6px;
+    margin: 20px auto;
+    display: block;
+    transition: var(--transition--);
+}
+
+.pricing .container .box a:hover{
+    background-color:var(--therd-color);
+    color: var(--second-color);
+
+}
+
+
+
+
+
+
+
+
+/*--End Pricing--*/
 
 /*--Start Animation*/
 @keyframes up-down {
