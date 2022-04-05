@@ -1107,6 +1107,11 @@ padding: var(--main-padding-top-bottom--);
     border-radius: 25px;
     font-size: 17px;
     font-weight: 900;
+    transition: var(--transition--);
+}
+
+.events .subscribe span:hover{
+    background-color:#21aff3;
 }
 @media (max-width:550px) {
     .events .subscribe span{
@@ -1367,7 +1372,7 @@ color: #777;
     bottom: 0;
     background-color: var(--therd-color);
     width: 2px;
-    transition: var(--transition--);
+    transition:0.8s;
 }
 
 .stats .container .box::after{
@@ -1378,7 +1383,7 @@ color: #777;
     top: 0;
     width: 2px;
     height: 0px;
-    transition: var(--transition--);
+    transition:0.8s;
 }
 .stats .container .box:hover::before,
 .stats .container .box:hover::after{
@@ -1598,6 +1603,12 @@ color: #777;
 .footer .foot p{
     color: var(--second-color);
     font-size: 20px;
+}
+
+.footer .foot span{
+    color:var(--therd-color);
+    font-weight: 900;
+    font-size: 25px;
 }
 
 
