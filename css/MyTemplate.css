@@ -1506,6 +1506,103 @@ color: #777;
 
 /*--End Discount--*/
 
+/*--Start Footer--*/
+.footer{
+    background-color: #191919;
+    padding: 70px 0 0;
+}
+
+.footer .container{
+    background-color: #191919;
+}
+.footer .container .content{
+    background-color: #191919;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 40px;
+    color: #b9b9b9;
+}
+
+.footer .container .content .media h1{
+    margin: 0;
+    color: var(--second-color);
+}
+.footer .container .content .media ul{
+    display: flex;
+    margin: 20px 0;
+}
+.footer .container .content .media ul li{
+    padding: 20px;
+    background-color: #333;
+    margin-right: 10px;
+}
+.footer .container .content .media ul li:first-child:hover{
+    
+    background-color: rgba(0, 89, 255, 0.856);;
+    
+}
+.footer .container .content .media ul li:nth-child(2):hover{
+    
+    background-color: rgba(255, 0, 0, 0.856);
+    
+}
+.footer .container .content .media ul li:last-child:hover{
+    
+    background-color: rgb(0, 102, 255);
+    
+}
+.footer .container .content .media ul li i{
+    font-size: 20px;
+}
+.footer .container .content .media p{
+    line-height: 2;
+}
+
+.footer .container .content .links ul li{
+    padding: 15px 0;
+    border-bottom: 1px solid #777;
+    transition: var(--transition--);
+    color: #b9b9b9;
+}
+.footer .container .content .links ul li:hover{
+    padding-left: 15px;
+   color: white !important;
+}
+.footer .container .content .links ul li i{
+    color: var(--therd-color);
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+.footer .container .content .adress .adre{
+    margin-bottom: 40px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.footer .container .content .adress .adre i{
+    color: var(--therd-color);
+    font-size: 30px;
+}
+
+.footer .container .content .gallery-foot img{
+    width: 65px;
+    border: 3px solid white;
+    margin: 1px;
+}
+.footer .foot{
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer .foot p{
+    color: var(--second-color);
+    font-size: 20px;
+}
+
+
+/*--End Footer--*/
+
 /*--Start Animation*/
 @keyframes up-down {
     0%{
