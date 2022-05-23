@@ -17,6 +17,8 @@ window.onscroll = () => {
             el.style.width = "0"; 
         });
     }
+    /* End our skills animation width Js */
+    /* Start Stats animation width Js */
     if (window.scrollY >= statsSection.offsetTop) {
         if (!startIncreasFun) {
             boxDivs.forEach((el) => {
@@ -42,10 +44,10 @@ function increaseCounter(el) {
         }
     }, 2000 / goal);
 }
-/* End our skills animation width Js */
-/* Start Stats animation width Js */
+/* End stats animation width Js */
 
 
 
 
-/* End Stats animation width Js */
+
+
