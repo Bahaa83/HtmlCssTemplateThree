@@ -4,7 +4,6 @@ let progressDivs = document.querySelectorAll(".prog");
 let statsSection = document.getElementById("Stats");
 let boxDivs = document.querySelectorAll("#Counter")
 let startIncreasFun = false;
-console.log(progressDivs);
 window.onscroll = () => {
     if (window.scrollY >= skillsSection.offsetTop) {
         progressDivs.forEach((el) => {
@@ -47,6 +46,31 @@ function increaseCounter(el) {
 /* End stats animation width Js */
 
 
+/* Start countdown timer in the event section using Js */
+let goalDate = new Date("Dec 31, 2022 23:59:59").getTime();
+let counterTimer = setInterval(() => {
+    
+    let dateNow = new Date().getTime();
+    let dateDefference = goalDate - dateNow;
+    let days = Math.floor(dateDefference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(dateDefference % (1000 * 60 * 60 * 24 ) / (1000 * 60 * 60));
+    let minutes = Math.floor(dateDefference % (1000 * 60 * 60 ) / (1000 * 60));
+    let seconds =Math.floor(dateDefference % (1000 * 60 ) / (1000 ));
+    console.log(hours);
+    document.getElementById("Days").textContent = days;
+    document.getElementById("Hours").textContent = hours;
+    document.getElementById("Minutes").textContent = minutes < 10 ? `0 ${minutes}` : minutes;
+    document.getElementById("Seconds").textContent = seconds < 10 ? `0 ${seconds}` : seconds;
+    if (dateDefference <= 0) {
+        clearInterval(counterTimer);
+    }
+}, 1000);
+
+
+
+
+
+/* End countdown timer in the event section using Js */
 
 
 
