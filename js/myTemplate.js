@@ -56,7 +56,6 @@ let counterTimer = setInterval(() => {
     let hours = Math.floor(dateDefference % (1000 * 60 * 60 * 24 ) / (1000 * 60 * 60));
     let minutes = Math.floor(dateDefference % (1000 * 60 * 60 ) / (1000 * 60));
     let seconds =Math.floor(dateDefference % (1000 * 60 ) / (1000 ));
-    console.log(hours);
     document.getElementById("Days").textContent = days;
     document.getElementById("Hours").textContent = hours;
     document.getElementById("Minutes").textContent = minutes < 10 ? `0 ${minutes}` : minutes;
