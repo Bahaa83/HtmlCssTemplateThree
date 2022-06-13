@@ -1,2 +1,2 @@
 # HtmlCssTemplateThree
-Html &amp; Css Template Three
+[Template Three](https://bahaa83.github.io/HtmlCssTemplateThree/MyTemplate.html)
